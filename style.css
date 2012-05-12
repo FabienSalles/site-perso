@@ -11,7 +11,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /************************************************************************************
 GENERAL STYLING
 *************************************************************************************/
-body { background: #0d1424 url(images/bg.jpg) ; font: .81em/150% Arial, Helvetica, sans-serif; color: #666;}
+body { background: #ddd ; font: .81em/150% Arial, Helvetica, sans-serif; color: #666;}
 a {
 	color: #026acb;
 	text-decoration: none;
@@ -173,10 +173,10 @@ NAVIGATION
 	background: -moz-linear-gradient(top, #6a6a6a, #b9b9b9);
 	background: linear-gradient(-90deg, #6a6a6a, #b9b9b9);
 	/* This will create a smooth transition for the opacity property */
-	-moz-transition:0.25s all;
-	-webkit-transition:0.25s all;
-	-o-transition:0.25s all;
-	transition:0.25s all;
+	-moz-transition:2s all;
+	-webkit-transition:2s all;
+	-o-transition:2s all;
+	transition:2s all;
 	cursor:pointer;
 }
 

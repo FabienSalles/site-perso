@@ -1,0 +1,23 @@
+# Bootstrap
+app/bootstrap*
+
+#SASS
+.sass-cache/
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.ini
+
+# Eclipse
+.buildpath
+.project
+.settings/
+
+# Netbeans 
+nbproject/

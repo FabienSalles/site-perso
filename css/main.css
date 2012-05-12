@@ -1,0 +1,381 @@
+/* line 17, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* Color */
+/* Fonts */
+/* Scaffolding */
+/* Header */
+/* SansitaOneRegular */
+@font-face {
+  font-family: "SansitaOneRegular";
+  src: url("../fonts/SanitaOne/SansitaOne-webfont.eot");
+  src: url("../fonts/SanitaOne/SansitaOne-webfont.eot?#iefix") format("eot"), url("../fonts/SanitaOne/SansitaOne-webfont.woff") format("woff"), url("../fonts/SanitaOne/SansitaOne-webfont.ttf") format("truetype"), url("../fonts/SanitaOne/SansitaOne-webfont.svg#SansitaOneRegular") format("svg");
+}
+
+/* ConfortaaRegular */
+@font-face {
+  font-family: "ConfortaaRegular";
+  src: url("../fonts/Confortaa/Comfortaa_Regular-webfont.eot");
+  src: url("../fonts/Confortaa/Comfortaa_Regular-webfont.eot?#iefix") format("eot"), url("../fonts/Confortaa/Comfortaa_Regular-webfont.woff") format("woff"), url("../fonts/Confortaa/Comfortaa_Regular-webfont.ttf") format("truetype"), url("../fonts/Confortaa/Comfortaa_Regular-webfont.svg#ConfortaaRegular") format("svg");
+}
+
+/* ConfortaaThin */
+@font-face {
+  font-family: "ConfortaaThin";
+  src: url("../fonts/Confortaa/Comfortaa_Thin-webfont.eot");
+  src: url("../fonts/Confortaa/Comfortaa_Thin-webfont.eot?#iefix") format("eot"), url("../fonts/Confortaa/Comfortaa_Thin-webfont.woff") format("woff"), url("../fonts/Confortaa/Comfortaa_Thin-webfont.ttf") format("truetype"), url("../fonts/Confortaa/Comfortaa_Thin-webfont.svg#ConfortaaThin") format("svg");
+}
+
+/* ConfortaaBold */
+@font-face {
+  font-family: "ConfortaaBold";
+  src: url("../fonts/Confortaa/Comfortaa_Bold-webfont.eot");
+  src: url("../fonts/Confortaa/Comfortaa_Bold-webfont.eot?#iefix") format("eot"), url("../fonts/Confortaa/Comfortaa_Bold-webfont.woff") format("woff"), url("../fonts/Confortaa/Comfortaa_Bold-webfont.ttf") format("truetype"), url("../fonts/Confortaa/Comfortaa_Bold-webfont.svg#ConfortaaBold") format("svg");
+}
+
+/* SFWonderComicRegular */
+@font-face {
+  font-family: "SFWonderComicRegular";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic-webfont.svg#SFWonderComicRegular") format("svg");
+}
+
+/* SFWonderComicItalic */
+@font-face {
+  font-family: "SFWonderComicItalic";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Italic-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Italic-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Italic-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Italic-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Italic-webfont.svg#SFWonderComicItalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* SFWonderComicBold */
+@font-face {
+  font-family: "SFWonderComicBold";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold-webfont.svg#SFWonderComicBold") format("svg");
+  font-weight: bold;
+}
+
+/* SFWonderComicBoldItalic */
+@font-face {
+  font-family: "SFWonderComicBoldItalic";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold_Italic-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold_Italic-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold_Italic-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold_Italic-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Bold_Italic-webfont.svg#SFWonderComicBoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* SFWonderComicBlotchRegular */
+@font-face {
+  font-family: "SFWonderComicBlotchRegular";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Blotch-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Blotch-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Blotch-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Blotch-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Blotch-webfont.svg#SFWonderComicBlotchRegular") format("svg");
+}
+
+/* SFWonderComicInlineRegular */
+@font-face {
+  font-family: "SFWonderComicInlineRegular";
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Inline-webfont.eot");
+  src: url("../fonts/Wonder_Comic/SF_Wonder_Comic_Inline-webfont.eot?#iefix") format("eot"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Inline-webfont.woff") format("woff"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Inline-webfont.ttf") format("truetype"), url("../fonts/Wonder_Comic/SF_Wonder_Comic_Inline-webfont.svg#SFWonderComicInlineRegular") format("svg");
+}
+
+/* line 1, ../sass/partials/_scaffolding.sass */
+html {
+  height: 100%;
+}
+
+/* line 3, ../sass/partials/_scaffolding.sass */
+body {
+  background-color: #292829;
+  font: 14px "ConfortaaRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  color: #f5f0ec;
+}
+
+/* line 8, ../sass/partials/_scaffolding.sass */
+a {
+  color: #f5f0ec;
+  text-decoration: none;
+  outline: none;
+}
+/* line 12, ../sass/partials/_scaffolding.sass */
+a:hover {
+  text-decoration: underline;
+  pointer: cursor;
+}
+
+/* line 15, ../sass/partials/_scaffolding.sass */
+p {
+  margin: 0 0 1.2em;
+  padding: 0;
+  text-align: justify;
+  text-justify: newspaper;
+}
+
+/* line 20, ../sass/partials/_scaffolding.sass */
+ul, ol {
+  margin: 1em 0 1.4em 24px;
+  padding: 0;
+  line-height: 9px;
+}
+
+/* line 24, ../sass/partials/_scaffolding.sass */
+li {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+/* line 27, ../sass/partials/_scaffolding.sass */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 25.2px;
+  margin: 20px 0 0.4em;
+}
+
+/* line 30, ../sass/partials/_scaffolding.sass */
+h1 {
+  font-size: 28px;
+}
+
+/* line 32, ../sass/partials/_scaffolding.sass */
+h2 {
+  font-size: 22.4px;
+}
+
+/* line 34, ../sass/partials/_scaffolding.sass */
+h2 {
+  font-size: 19.6px;
+}
+
+/* line 36, ../sass/partials/_scaffolding.sass */
+h3 {
+  font-size: 16.8px;
+}
+
+/* line 38, ../sass/partials/_scaffolding.sass */
+h4 {
+  font-size: 15.4px;
+}
+
+/* line 41, ../sass/partials/_scaffolding.sass */
+input[type=search] {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+/* line 44, ../sass/partials/_scaffolding.sass */
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* line 48, ../sass/partials/_scaffolding.sass */
+#wrap {
+  min-height: 100%;
+  position: relative;
+}
+/* line 51, ../sass/partials/_scaffolding.sass */
+#wrap #separator {
+  height: 7px;
+  margin: 0;
+  background-color: #999999;
+  border: 0 none;
+}
+/* line 56, ../sass/partials/_scaffolding.sass */
+#wrap #container {
+  position: relative;
+  width: 840px;
+  margin: 20px auto 0;
+  padding-bottom: 100px;
+  overflow: hidden;
+  height: 370px;
+  *zoom: 1;
+}
+/* line 29, ../sass/mixins.sass */
+#wrap #container:before, #wrap #container:after {
+  display: table;
+  content: "";
+}
+/* line 32, ../sass/mixins.sass */
+#wrap #container:after {
+  clear: both;
+}
+/* line 64, ../sass/partials/_scaffolding.sass */
+#wrap #container > div {
+  width: 20000px;
+  margin: auto;
+  height: 100%;
+}
+/* line 68, ../sass/partials/_scaffolding.sass */
+#wrap #container > div .content {
+  width: 840px;
+  height: 90%;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#wrap #container > div .content {
+  *display: inline;
+}
+/* line 72, ../sass/partials/_scaffolding.sass */
+#wrap #container > div .content h1 {
+  font: 28px "ConfortaaThin";
+  text-align: center;
+}
+/* line 76, ../sass/partials/_scaffolding.sass */
+#wrap #footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* line 84, ../sass/partials/_scaffolding.sass */
+#home h1 {
+  margin: 50px auto 70px;
+  font-size: 56px !important;
+}
+/* line 87, ../sass/partials/_scaffolding.sass */
+#home p {
+  font-size: 21px;
+}
+/* line 89, ../sass/partials/_scaffolding.sass */
+#home #list-social-media {
+  margin-left: 600px;
+}
+/* line 91, ../sass/partials/_scaffolding.sass */
+#home #list-social-media li {
+  list-style-type: circle;
+}
+/* line 93, ../sass/partials/_scaffolding.sass */
+#home #list-social-media li a {
+  font-size: 21px;
+  line-height: 19.8px;
+}
+
+@media screen and (max-width: 798px) {
+  /* line 99, ../sass/partials/_scaffolding.sass */
+  body > section {
+    width: 95%;
+  }
+  /* line 101, ../sass/partials/_scaffolding.sass */
+  body > section #content {
+    padding: 3% 0;
+  }
+}
+/* line 1, ../sass/partials/_header.sass */
+#header {
+  margin: 0 auto;
+  width: 840px;
+  position: relative;
+  height: 80px;
+}
+/* line 6, ../sass/partials/_header.sass */
+#header h1 {
+  margin: 0;
+  padding-top: 10px;
+  font: 42px "ConfortaaBold";
+}
+/* line 10, ../sass/partials/_header.sass */
+#header h1 span {
+  font: 35px "ConfortaaThin";
+  vertical-align: top;
+}
+/* line 13, ../sass/partials/_header.sass */
+#header #nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 16.1px;
+}
+/* line 18, ../sass/partials/_header.sass */
+#header #nav ul {
+  margin: 0;
+  padding-top: 35px;
+}
+/* line 21, ../sass/partials/_header.sass */
+#header #nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../lib/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#header #nav ul li {
+  *display: inline;
+}
+/* line 26, ../sass/partials/_header.sass */
+#header #nav ul li a {
+  color: #f5f0ec;
+  padding: 10px 10px 5px;
+  text-decoration: none;
+}

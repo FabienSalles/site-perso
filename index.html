@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<!-- disable iPhone inital scale -->
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<title>Fabien SALLES : Etudiant en Informatique</title>
-		<link href="css/screen.css" rel="stylesheet" type="text/css">
+		<title>Fabien SALLES : Développeur Web en alternance</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<!-- html5.js et css3-mediaqueries.js for IE less than 9 -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,14 +13,11 @@
 		<![endif]-->
 	</head>
 	<body>
-		<section>
+		<section id="wrap">
 			<header id="header">
-				<hgroup>
-					<h1><a href="#">Fabien SALLES</a></h1>
-					<h2>Etudiant en Informatique</h2>
-				</hgroup>
-				<nav>
-					<ul id="nav">
+				<h1>Fabien <span>Salles</span></h1>
+				<nav id="nav">
+					<ul>
 						<li class="selected" id="first"><a>Accueil</a></li>
 						<li><a>Formations</a></li>
 						<li><a>Expériences</a></li>
@@ -28,34 +25,33 @@
 						<li id="last"><a>Contact</a></li>
 					</ul>
 				</nav>
-				<form id="network">
-					<img src="images/feed_32.png" />
-					<a href="https://twitter.com/#!/FabienSalles" alt="Mon compte Twitter" ><img src="images/twitter_32.png" /></a>
-					<img src="images/gplus_32.png" />
-					<img src="images/viadeo_32.png" />
-					<img src="images/linkedin_32.png" />
-				</form>
 			</header>
-			<section id="content">
-				<article class="post">
-					<header>
-						<h1 class="post-title"><a href="#">Site actuellement en construction</a></h1>
-					</header>
-					<!--<p>
-						Actuellement en DUT Informatique à l'IUT du Limousin, je suis admis pour l'année prochaine à la licence MIAGE en alternance de l'univeristé de Paris Ouest (Nanterre).<br />
-						
-					</p>-->
-				</article>
-			</section>
-			<aside id="sidebar">
-				<section class="widget">
-					<h4 class="widgettitle">Mes derniers Tweets</h4>
-					<ul>
-						<li>En construction</li>
-					</ul>
-				</section>					
-			</aside>
+			<hr id="separator"/>
+			<div id="container">
+				<div>
+					<article id="home" class="content">
+						<h1>Développeur Web en Alternance</h1>
+						<p>
+							Binvenue sur mon site! J'ai 21 ans et je suis actuellement en Licence Miage en Alternance.<br />
+							Le site est actuellement en construction. Si vous désirez me connaître davantage, vous pouvez me trouver sur les différentes sites ci-dessous : <br />
+						</p>
+						<ul id="list-social-media">
+							<li><a href="https://www.facebook.com/sallesfabien" Title="Facebook Fabien SALLES" target="_blank">Facebook</a></li>
+							<li><a href="https://twitter.com/#!/FabienSalles" Title="Twitter Fabien SALLES" target="_blank">Twitter</a></li>
+							<li><a href="http://www.linkedin.com/in/fabiensalles" Title="Linkedin Fabien SALLES" target="_blank">Linkedin</a></li>
+							<li><a href="http://www.viadeo.com/fr/profile/fabien.salles3" Title="Viadeo Fabien SALLES" target="_blank">Viadeo</a></li>
+							<li><a href="https://github.com/FabienSalles" Title="GitHub Fabien SALLES" target="_blank">GitHub</a></li>
+							
+						</ul>
+					</article>
+					<article id="home" class="content">
+						Développeur Web en Alternance
+						<p></p>
+					</article>
+				</div>
+			</div>
 			<footer id="footer">
+				Footer
 			</footer>
 		</section>
 	</body>

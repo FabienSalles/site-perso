@@ -67,9 +67,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* Color */
+/* Fonts */
+/* Global */
+/* Scaffolding */
+/* Header */
 /* line 1, ../sass/partials/_scaffolding.sass */
 body {
-  background: #dddddd;
+  background: url("../images/background.jpg") no-repeat fixed 0 -65px black;
   font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666666;
 }
@@ -240,8 +245,8 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 }
 /* line 7, ../sass/partials/_header.sass */
 #header h1 a {
-  font-weight: bold;
-  color: black;
+  font-family: SFWonderComicRegular;
+  color: white;
   text-decoration: none;
 }
 /* line 11, ../sass/partials/_header.sass */

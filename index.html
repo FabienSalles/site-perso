@@ -11,29 +11,34 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
+<!-- 		<script data-main="js/main" src="js/require.js"></script> -->
+		<script src="js/mootools-core.js"></script>
+		<script src="js/mootools-more.js"></script>
+		<script src="js/main.js"></script>
 	</head>
 	<body>
 		<section id="wrap">
 			<header id="header">
-				<h1>Fabien <span>Salles</span></h1>
+				<h1><a>Fabien <span>Salles</span></a></h1>
 				<nav id="nav">
 					<ul>
-						<li class="selected" id="first"><a>Accueil</a></li>
-						<li><a>Formations</a></li>
-						<li><a>Expériences</a></li>
-						<li><a>Compétences</a></li>
-						<li id="last"><a>Contact</a></li>
+						<li><a id="link-home" class="selected" href="#">Accueil</a></li>
+						<li><a id="link-formation" href="#">Formations</a></li>
+						<li><a id="link-experience" href="#">Expériences</a></li>
+						<li><a id="link-skill" href="#">Compétences</a></li>
+						<li><a id="link-contact" href="#">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
 			<hr id="separator"/>
 			<div id="container">
-				<div>
+				<div id="left-arrow"><span>Accueil</span></div>
+				<div id="right-arrow"><span>Formation</span></div>
+				<div id="page">
 					<article id="home" class="content">
 						<h1>Développeur Web en Alternance</h1>
 						<p>
-							Binvenue sur mon site! J'ai 21 ans et je suis actuellement en Licence Miage en Alternance.<br />
-							Le site est actuellement en construction. Si vous désirez me connaître davantage, vous pouvez me trouver sur les différentes sites ci-dessous : <br />
+							Bienvenue sur mon site! J'ai 21 ans et je suis en Licence Miage en Alternance. Le site est actuellement en construction. Si vous désirez me connaître davantage, vous pouvez me trouver sur les différents sites ci-dessous : <br />
 						</p>
 						<ul id="list-social-media">
 							<li><a href="https://www.facebook.com/sallesfabien" Title="Facebook Fabien SALLES" target="_blank">Facebook</a></li>
@@ -41,12 +46,31 @@
 							<li><a href="http://www.linkedin.com/in/fabiensalles" Title="Linkedin Fabien SALLES" target="_blank">Linkedin</a></li>
 							<li><a href="http://www.viadeo.com/fr/profile/fabien.salles3" Title="Viadeo Fabien SALLES" target="_blank">Viadeo</a></li>
 							<li><a href="https://github.com/FabienSalles" Title="GitHub Fabien SALLES" target="_blank">GitHub</a></li>
-							
 						</ul>
 					</article>
-					<article id="home" class="content">
-						Développeur Web en Alternance
-						<p></p>
+					<article id="formation" class="content">
+						<h1>Formations</h1>
+						<p>
+							En construction
+						</p>
+					</article>
+					<article id="experience" class="content">
+						<h1>Expériences</h1>
+						<p>
+							En construction
+						</p>
+					</article>
+					<article id="competence" class="content">
+						<h1>Compétences</h1>
+						<p>
+							En construction
+						</p>
+					</article>
+					<article id="contact" class="content">
+						<h1>Contact</h1>
+						<p>
+							En construction
+						</p>
 					</article>
 				</div>
 			</div>

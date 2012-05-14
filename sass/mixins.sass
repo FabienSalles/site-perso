@@ -23,7 +23,15 @@
 			:font-weight $weight
 		@if $style
 			:font-style $style
-			
+		
+@mixin user-select($select : none)
+	:-webkit-user-select $select
+	:-khtml-user-select $select
+	:-moz-user-select $select
+	:-ms-user-select $select
+	:-o-user-select $select
+	:user-select $select
+		
 @mixin clearfix()
 	:*zoom 1
 	&:before, &:after

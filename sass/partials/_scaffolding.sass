@@ -1,7 +1,7 @@
 html
 	:height 100%
 body
-	:background-color #292829
+	:background-color $backgroundColor
 	:font $baseFontSize $baseFontFamily
 	:height 100%
 	:color $textColor
@@ -54,23 +54,64 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 		:background-color #999
 		:border 0 none
 	#container
+		:min-height 300px
 		:position relative
 		:width $globalWidth
 		:margin 20px auto 0
 		:padding-bottom 100px
 		:overflow hidden
-		:height 370px
 		@include clearfix()
-		> div
+		#left-arrow, #right-arrow
+			:width 40px
+			:height 40px
+			:position fixed
+			@include border-radius(22.5px)
+			:border 4px solid #151515
+			:background-color #555
+			:cursor pointer
+			span
+				@include transition-duration(.5s)
+				@include transition-timing-function(ease-in)
+				:position absolute
+				@include opacity(0)
+				@include user-select()
+				:height 40px
+				:vertical-align middle
+				:font $baseFontSize*1.5 "ConfortaaBold"
+				:margin-top 8px
+			&:hover
+				:border 4px solid #444
+				:background-color #151515
+				span
+					@include transition-duration(.5s)
+					@include transition-timing-function(ease-in)
+					@include opacity(1)
+		#left-arrow
+			:margin 15% 0 85% -90px
+			:background url('../images/left-arrow.png') no-repeat center center
+			span
+				:right 0
+			&:hover span
+				:right 60px
+		#right-arrow
+			:margin 15% 0 85% 900px
+			:background url('../images/right-arrow.png') no-repeat center center
+			span
+				:left 0
+			&:hover span
+				:left 60px
+		#page
 			:width 20000px
 			:margin auto
-			:height 100%
+			:position relative
+			:left 0
 			.content
 				:width $globalWidth
 				:height 90%
 				@include inline-block()
+				:vertical-align top
 				h1
-					:font $baseFontSize*2 "ConfortaaThin"
+					:font $baseFontSize*3 "ConfortaaThin"
 					:text-align center
 				
 	#footer
@@ -78,22 +119,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 		:bottom 0
 		:width 100%
 		:text-align center
-		:padding-top 50px
-
-#home
-	h1
-		:margin 50px auto 70px
-		:font-size $baseFontSize*4 !important
-	p
-		:font-size $baseFontSize*1.5
-	#list-social-media
-		:margin-left 600px
-		li
-			:list-style-type circle
-			a
-				:font-size $baseFontSize*1.5
-				:line-height $baseLineHeight*1.1
-		
+		:padding-top 50px		
 		
 @media screen and (max-width: 798px)
 	body > section

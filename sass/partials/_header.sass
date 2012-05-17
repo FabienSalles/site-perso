@@ -1,6 +1,6 @@
 #header
 	:margin 0 auto
-	:width $globalWidth
+	:max-width $globalWidth
 	:position relative
 	:height 80px
 	h1
@@ -33,4 +33,30 @@
 					&:hover
 						:cursor pointer
 						:color $white
-						@include text-shadow(#ddd 0px 0px 20px)
+						@include text-shadow($white 0px 0px 20px)
+@media screen and (max-width: 760px)
+	#header
+		#nav
+			:top 20px
+@media screen and (max-width: 680px)
+	#header
+		:height 90px
+		h1
+			:text-align center
+		#nav
+			:position relative
+			ul
+				:margin auto
+				:padding 0
+				:margin-top -15px
+				:text-align center
+@media screen and (max-width: 560px)
+	#header
+		:height 110px
+		#nav
+			ul
+				li
+					:height 25px
+@media screen and (max-width: 340px)
+	#header
+		:height 130px

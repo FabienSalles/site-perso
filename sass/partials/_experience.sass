@@ -1,0 +1,45 @@
+#experience
+	> article
+		:margin-bottom 20px
+		@include clearfix()
+		.image
+			:float left
+			:background-color $white
+			:overflow hidden
+			:width 300px
+			:height 230px
+			:text-align center
+			:margin 0 20px 20px 0
+			@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.5))
+			@include border-radius(10px)
+			> img
+				:max-width 100%
+				:max-height 100%		
+		.experience
+			h2
+				:margin-bottom 5px
+				:margin-top -5px
+				:text-decoration underline
+			h3
+				:font-style italic
+@media screen and (max-width: 760px)
+	#experience
+		> article
+			.image
+				:height 150px !important
+				:width 200px !important
+		hr
+			:display none
+@media screen and (max-width: 650px)
+	#experience
+		> article
+			.image
+				:height 100px !important
+				:width 125px !important
+@media screen and (max-width: 500px)
+	#experience
+		> article
+			.image
+				:height 80px !important
+				:width 100px !important
+				:margin-bottom 15px

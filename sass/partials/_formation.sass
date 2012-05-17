@@ -1,0 +1,32 @@
+#formation
+	> article
+		:margin-bottom 20px
+		@include clearfix()
+		.image
+			:float left
+			:padding 10px
+			:background-color $white
+			:width 150px
+			:height 100px
+			:text-align center
+			:margin 0 20px 20px 0
+			@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.5))
+			@include border-radius(10px)
+			> img
+				:max-width 100%
+				:max-height 100%		
+		.formation
+			h2
+				:margin-bottom 5px
+				:margin-top -5px
+				:text-decoration underline
+			h3
+				:font-style italic
+			label, span
+				@include inline-block()
+@media screen and (max-width: 650px)
+	#formation
+		> article
+			.image
+				:height 60px !important
+				:width 100px !important

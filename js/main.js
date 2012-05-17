@@ -8,22 +8,17 @@ var Slider = new Class({
 	
 	/** Options */
 	options		: {
-		left		: 0,
-		minLeft		: -this.width*4
+		left		: 0
 	},
 	
 	/** Constructor */
 	initialize	: function(options){
 		 
 		// Container
-		this.page 				= $( 'page' );
-		this.leftArrow			= $( 'left-arrow' );
-		this.rightArrow			= $( 'right-arrow' );
-		this.labelLeftArrow 	= this.leftArrow.getElement('span');
-		this.labelRightArrow 	= this.rightArrow.getElement('span');
-			
+		this.container 				= $( 'page' );
+		
 		// Slider Effect
-		this.slider		= new Fx.Morph(this.page, {
+		this.slider		= new Fx.Morph(this.container, {
 			transition 	: Fx.Transitions.Circ.easeInOut,
 			duration 	: 800
 		});
@@ -32,175 +27,146 @@ var Slider = new Class({
 		this.inProgress = false;
 		
 		// Largeur of the container of the slider
+		this.baseWidth = 840;
 		this.width = 840;
 		
+		// Page in focus
+		this.page = 0;
+		
 		//Elements
-		this.elem = {
-			0 : {
-				title	: "Accueil",
-				link	: $('link-home'),
-				left	: 0
+		this.elem = [
+			{
+				title	: 'Accueil',
+				id		: 'link-home'
 			},
-			1 : {
-				title 	: "Formation",
-				link	: $('link-formation'),
-				left	: -this.width
+			{
+				title 	: 'Formation',
+				id		: 'link-formation'
 			},
-			2 : {
-				title 	: "Expériences",
-				link	: $('link-experience'),
-				left	: -this.width*2
+			{
+				title 	: 'Expériences',
+				id		: 'link-experience'
 			},
-			3 : {
-				title 	: "Compétences",
-				link	: $('link-skill'),
-				left	: -this.width*3
+			{
+				title 	: 'Compétences',
+				id		: 'link-skill'
 			},
-			4 : {
-				title 	: "Contact",
-				link	: $('link-contact'),
-				left	: -this.width*4
+			{
+				title 	: 'Contact',
+				id		: 'link-contact'
 			}
-		}
+		];
 		
 		// Merge defaults and instanciations options
 		this.setOptions(options);
 		
-		if( !this.options.left )
-			this.leftArrow.setStyle( 'display' , 'none');
+		// Events
+		this.setEvents();
 		
-		// -- Events --//
-		this.setEvent();
+		// Set width of the slider
+		this.setSyleForWidth();
 	
 	},
 	
 	/** Set all events for the slider */
-	setEvent		: function(){
+	setEvents		: function(){
 		
-		this.leftArrow.addEvent( 'click' , this.slideLeft.bind( this ) );
-		this.rightArrow.addEvent( 'click' , this.slideRight.bind( this ) );
+		// Slider Events 
+		this.slider.addEvents({
+			start 		:  this.onStart.bind( this ),
+			complete 	: this.onComplete.bind( this )
+		});
 		
-		this.slider.addEvent( 'start' , this.onStart.bind( this ) );
-		this.slider.addEvent( 'complete' , this.onComplete.bind( this ) );
-		
+		// Nav Events
 		Object.each(this.elem, this.setNavEvent.bind( this ));
+		
+		// Window Event for responsive slider
+		window.addEvent( 'resize', this.setSyleForWidth.bind( this ));
 	},
 	
 	/** Set click events in navbar */
-	setNavEvent	: function(elem){
+	setNavEvent	: function(elem, i){
 		
-		elem.link.addEvent( 'click', this.slide.bind( this, elem.left ));
-	},
-	
-	/** Slide left */
-	slideLeft 		: function(){
+		// Remove Events for reuse this function for 
+		// create responsive slider with other dimension
+		$(elem.id).removeEvents( 'click' );
 		
-		if(!this.inProgress){
-
-			this.options.left += this.width;
-			
-			this.slideEffect();
-		}
-		return false;
-	},
-	
-	/** Slide Right */
-	slideRight 		: function(){
-		
-		if(!this.inProgress){			
-			
-			this.options.left -= this.width;
-			
-			this.slideEffect();
-		}
-		
-		return false;
+		// Create Event slide
+		$(elem.id).addEvent( 'click', this.slide.bind( this, i ));
 	},
 	
 	/** Slide width val of the left position */
-	slide 			: function( left ){
+	slide 			: function( i ){
 		
 		if(!this.inProgress){
 			
-			this.options.left = left;
+			this.page = i;
+			
+			this.options.left = -this.width*i;
 			
 			this.slideEffect();
 		}
-		
-		return false;
 	},
 	
 	/** Slide effect */
 	slideEffect		: function(){
 		
+		// Set width of the slider for create animation
 		this.slider.start({
 			'left' : this.options.left
 		});
-		
-		this.setArrows();
 	},
 	
 	/** Allow to stop click events for the slider */
 	onStart 		: function(){
 		
+		// Use for stop slider when he is in progress
 		this.inProgress = true;
 	},
 	
 	/** Allow to use slider */
 	onComplete		: function(){
 		
+		// Use for reuse slider
 		this.inProgress = false;
 	},
 	
-	/** Change States of left and right Arrows */
-	setArrows		: function(){
+	
+	/** Allow to create responsive Slider */
+	setSyleForWidth		: function(){
 		
-		switch( this.options.left ){
+		// retrieve width of the window
+		var width = document.body.getStyle('width').toInt();
 		
-			case -this.width	:
-				this.setStyleArrows('block', 'block');
-				this.setLabelArrows( 0, 2 );
-				break;
-				
-			case -this.width*2	:
-				this.setStyleArrows('block', 'block');
-				this.setLabelArrows( 1, 3 );
-				break;
-				
-			case -this.width*3	:
-				this.setStyleArrows('block', 'block');
-				this.setLabelArrows( 2, 4 );
-				break;
+		if(width < this.baseWidth){
+
+			// set width
+			this.width = width;
 			
-			case -this.width*4	:
-				this.setStyleArrows('block', 'none');
-				this.setLabelArrows( 3, false );
-				break;
-				
-			default				:
-				this.setStyleArrows('none', 'block');
-				this.setLabelArrows( false, 1 );
-				break;
+			// change Slider width
+			this.changeSliderWidth();
+		} 
+		else {
+			
+			// Reuse default values
+			this.width = this.baseWidth;
+			
+			this.changeSliderWidth();
 		}
 	},
 	
-	/** Change label for the left and right arrows */
-	setLabelArrows	: function(left, right){
+	/** Change slider width properties */
+	changeSliderWidth	: function(){
 		
-		if(left!==false){
-			this.labelLeftArrow.set('html', this.elem[left].title);
-		}
-			
-		if(right!==false){
-			this.labelRightArrow.set('html', this.elem[right].title);
-		}
-			
-			
-	},
-	
-	setStyleArrows: function(left, right){
-		this.leftArrow.setStyle( 'display' , left );
-		this.rightArrow.setStyle( 'display' , right );
+		// set width of containers
+		$$('.content').setStyle('width',this.width-20);
+		
+		// set width for to use the real values for nav events  
+		Object.each(this.elem, this.setNavEvent.bind( this ));
+
+		// Set width position of the container
+		this.container.setStyle('left', "-"+(this.width*this.page)+"px" );
+		
 	}
 });
 

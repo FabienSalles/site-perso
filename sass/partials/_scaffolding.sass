@@ -32,7 +32,6 @@ h1
 h2
 	:font-size $baseFontSize*1.6
 	:margin-bottom 5px
-	:margin-top -5px
 	:text-decoration underline
 h3
 	:font-size $baseFontSize*1.1
@@ -44,15 +43,19 @@ strong
 	:font-family "ConfortaaBold"
 abbr
 	:color $white
-	@include text-shadow($white 0px 0px 1px)
 	:cursor help
-
+img
+	:max-width 100%
+	:height auto
+	:width auto\9 /* ie8 */
 // reset webkit search input styles	
 input[type=search]
 	:-webkit-appearance none
 	:outline none
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button
 	:display none
+hr
+	:border-style dotted
 	
 #wrap
 	:min-height 100%

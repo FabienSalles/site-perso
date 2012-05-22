@@ -1,0 +1,31 @@
+#skills
+	.skill
+		:margin-left 2.4%
+		:width 30%
+		@include inline-block()
+		:margin-bottom 20px
+		:vertical-align top
+		h2
+			:text-align center
+			:text-decoration none
+		> div
+			:border 2px dotted #888
+			:padding 10px
+			@include box-shadow(0 0 1px rgba(249, 247, 247, 0.5) inset, 0 0 2px rgba(249, 247, 247, 0.5))
+			@include border-radius(8px)
+			> div
+				:min-height 22px
+				.star
+					:float right
+					.star1, .star2, .star3
+						:width 15px
+						:height 14px
+						:background-image url('../images/star.png')
+						:background-repeat no-repeat
+						:float left
+					.star1
+						:background-position 0 top
+					.star2
+						:background-position -15px top
+					.star3
+						:background-position -30px top

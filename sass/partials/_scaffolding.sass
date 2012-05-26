@@ -1,7 +1,7 @@
 html
 	:height 100%
 body
-	:background-color $backgroundColor
+	:background url('../images/background.jpg') $backgroundColor
 	:font $baseFontSize $baseFontFamily
 	:height 100%
 	:color $textColor
@@ -25,14 +25,15 @@ li
 	:margin 0 0 .5em 0
 	:padding 0
 h1, h2, h3, h4, h5, h6
-	:line-height $baseLineHeight*1.4
 	:margin 0 0 .4em
 h1
-	:font-size $baseFontSize*2
+	:font-size $baseFontSize*3.3
+	:line-height $baseLineHeight*3.3
 h2
-	:font-size $baseFontSize*1.6
-	:margin-bottom 5px
-	:text-decoration underline
+	:font-size $baseFontSize*1.8
+	:line-height $baseLineHeight*1.8
+	:margin-bottom 0
+	:font-family 'ConfortaaRegular'
 h3
 	:font-size $baseFontSize*1.1
 	:line-height $baseLineHeight*1.1
@@ -55,7 +56,8 @@ input[type=search]
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button
 	:display none
 hr
-	:border-style dotted
+	:border-style dashed
+	:margin-top 0
 	
 #wrap
 	:min-height 100%
@@ -124,9 +126,11 @@ hr
 				@include inline-block()
 				:vertical-align top
 				h1
-					:font $baseFontSize*3 "ConfortaaThin"
+					:font-family "PlaytimeWithHotToddies3DRg"
 					:margin 0 0 30px
 					:text-align center
+				hr
+					:margin-right 20px
 				
 	#footer
 		:position absolute

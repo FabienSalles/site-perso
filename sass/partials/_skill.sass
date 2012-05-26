@@ -1,17 +1,16 @@
 #skills
 	.skill
-		:margin-left 2.4%
+		:margin 0 1.4% 20px
 		:width 30%
 		@include inline-block()
-		:margin-bottom 20px
 		:vertical-align top
 		h2
 			:text-align center
 			:text-decoration none
 		> div
-			:border 2px dotted #888
+			:border 1px dashed $textColor
 			:padding 10px
-			@include box-shadow(0 0 1px rgba(249, 247, 247, 0.5) inset, 0 0 2px rgba(249, 247, 247, 0.5))
+			@include box-shadow(0 0 3px rgba(249, 247, 247, 0.5) inset, 0 0 3px rgba(249, 247, 247, 0.5))
 			@include border-radius(8px)
 			> div
 				:min-height 22px
@@ -29,3 +28,12 @@
 						:background-position -15px top
 					.star3
 						:background-position -30px top
+@media screen and (max-width: 680px)
+	#skills
+		.skill
+			:width 45%
+@media screen and (max-width: 480px)
+	#skills
+		.skill
+			:width 80%
+			:margin 0 10% 10px

@@ -162,7 +162,7 @@ var Slider = new Class({
 	
 	/** Change slider width properties */
 	changeSliderWidth	: function(){
-		
+
 		// set width of containers
 		$$('.content').setStyle('width',this.width-20);
 		
@@ -224,7 +224,7 @@ var Stars = new Class({
 		
 window.addEvent( 'domready' , function(){
 	
-	var slider = new Slider;
+	var slider = new Slider({page:3});
 
 	var stars = new Stars('.star');
 });

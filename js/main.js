@@ -35,34 +35,43 @@ var Slider = new Class({
 		this.elem = [
 			{
 				title	: 'Accueil',
-				id		: 'link-home'
+				link	: $( 'link-home' ),
+				page	: $( 'home' )
 			},
 			{
 				title 	: 'Formation',
-				id		: 'link-formation'
+				link	: $( 'link-formation' ),
+				page	: $( 'formation' )
 			},
 			{
 				title 	: 'Expériences',
-				id		: 'link-experience'
+				link	: $( 'link-experience' ),
+				page	: $( 'experience' )
 			},
 			{
 				title 	: 'Compétences',
-				id		: 'link-skill'
+				link	: $( 'link-skill' ),
+				page	: $( 'skills' )
 			},
 			{
 				title 	: 'Contact',
-				id		: 'link-contact'
+				link	: $( 'link-contact' ),
+				page	: $( 'contact' )
 			}
 		];
 		
 		// Merge defaults and instanciations options
 		this.setOptions(options);
 		
+		// set value of the height of the page
+		this.options.height = this.elem[this.options.page].page.getStyle('height');
+
+		
 		// Events
 		this.setEvents();
 		
-		// Set width of the slider
-		this.setSyleForWidth();
+		// Set style of the slider
+		this.setSyle();
 		
 		this.options.page && this.slide(this.options.page);
 			
@@ -78,24 +87,21 @@ var Slider = new Class({
 			complete 	: this.onComplete.bind( this )
 		});
 		
-		// Nav Events
-		Object.each(this.elem, this.setNavEvent.bind( this ));
-		
 		// Window Event for responsive slider
-		window.addEvent( 'resize', this.setSyleForWidth.bind( this ));
+		window.addEvent( 'resize', this.setSyle.bind( this ));
 		
 		return this;
 	},
 	
 	/** Set click events in navbar */
-	setNavEvent	: function(elem, i){
+	setNavEvent	: function( elem, i ){
 		
 		// Remove Events for reuse this function for 
 		// create responsive slider with other dimension
-		$(elem.id).removeEvents( 'click' );
+		elem.link.removeEvents( 'click' );
 		
 		// Create Event slide
-		$(elem.id).addEvent( 'click', this.slide.bind( this, i ));
+		elem.link.addEvent( 'click', this.slide.bind( this, i ));
 	},
 	
 	/** Slide width val of the left position */
@@ -106,6 +112,7 @@ var Slider = new Class({
 			this.options.page = i;
 			
 			this.options.left = -this.width*i;
+			this.options.height = this.elem[i].height;
 			
 			this.slideEffect();
 		}
@@ -118,7 +125,8 @@ var Slider = new Class({
 		
 		// Set width of the slider for create animation
 		this.slider.start({
-			'left' : this.options.left
+			'left' 		: this.options.left,
+			'height' 	: this.options.height
 		});
 	},
 	
@@ -138,40 +146,40 @@ var Slider = new Class({
 	
 	
 	/** Allow to create responsive Slider */
-	setSyleForWidth		: function(){
+	setSyle			: function(){
 		
 		// retrieve width of the window
 		var width = document.body.getStyle('width').toInt();
 		
 		if(width < this.baseWidth){
-
 			// set width
 			this.width = width;
-			
-			// change Slider width
-			this.changeSliderWidth();
 		} 
 		else {
-			
 			// Reuse default values
 			this.width = this.baseWidth;
-			
-			this.changeSliderWidth();
 		}
-	},
-	
-	/** Change slider width properties */
-	changeSliderWidth	: function(){
-
+		
+		// set height of pages
+		//Object.each(this.elem, this.setHeightOfPages.bind( this ));
+		//$$('.content').setStyle('height',this.elem[this.options.page].page.getStyle('height'));
+		
 		// set width of containers
 		$$('.content').setStyle('width',this.width-20);
 		
-		// set width for to use the real values for nav events  
-		Object.each(this.elem, this.setNavEvent.bind( this ));
-
-		// Set width position of the container
+		// Set left position of the container
 		this.container.setStyle('left', "-"+(this.width*this.options.page)+"px" );
 		
+		// set width for to use the real values for nav events  
+		Object.each(this.elem, this.setNavEvent.bind( this ));
+	},
+	
+	/** Set height values of all pages */
+	setHeightOfPages	: function(elem){		
+		
+		elem.page.setStyle('height', '')
+		elem.height = elem.page.getStyle('height');
+		console.log(elem.height);
 	}
 });
 
@@ -224,7 +232,7 @@ var Stars = new Class({
 		
 window.addEvent( 'domready' , function(){
 	
-	var slider = new Slider({page:3});
+	var slider = new Slider();
 
 	var stars = new Stars('.star');
 });

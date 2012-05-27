@@ -21,14 +21,14 @@
 				:font-style italic
 			label, span
 				@include inline-block()
-@media screen and (max-width: 640px)
+@media screen and (max-width: 640px), @media screen and (max-device-width: 64px)
 	#formation
 		> article
 			.image
 				:height 75px !important
 				> img
 					max-height: 75px
-@media screen and (max-width: 480px)
+@media screen and (max-width: 480px), @media screen and (max-device-width: 480px)
 	#formation
 		> article
 			.image

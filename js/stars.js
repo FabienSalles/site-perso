@@ -1,7 +1,8 @@
+define(["js/mootools-core.js"], function(){
 	/**
-	 * Class Star
+	 * Class Stars
 	 */
-	var Stars = new Class({
+	return new Class({
 		
 		/** Constructor */
 		initialize	: function( elem ){
@@ -44,3 +45,4 @@
 			return new Element('span.star'+num);
 		}
 	});
+});

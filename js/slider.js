@@ -1,7 +1,8 @@
+define(["js/mootools-core.js"], function(){	
 	/**
 	 * Slider class
 	 */
-	var Slider = new Class({
+	return new Class({
 			
 		/** Inheritance */
 		Implements	: Options,
@@ -195,3 +196,4 @@
 			elem.height = elem.page.getStyle('height');
 		}
 	});
+});

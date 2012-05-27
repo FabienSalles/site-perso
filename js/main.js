@@ -71,7 +71,7 @@ var Slider = new Class({
 		this.setOptions(options);
 		
 		// set value of the height of the page
-		this.options.height = this.elem[this.options.page].page.getStyle('height');
+		this.height = this.elem[this.options.page].page.getStyle('height');
 
 		
 		// Events
@@ -119,7 +119,7 @@ var Slider = new Class({
 			this.options.page = i;
 			
 			this.options.left = -this.width*i;
-			this.options.height = this.elem[i].height;
+			this.height = this.elem[i].height;
 			
 			this.slideEffect();
 			
@@ -138,7 +138,7 @@ var Slider = new Class({
 		// Set width of the slider for create animation
 		this.slider.start({
 			'left' 		: this.options.left,
-			'height' 	: this.options.height
+			'height' 	: this.height
 		});
 	},
 	
@@ -161,7 +161,7 @@ var Slider = new Class({
 	setSyle			: function(){
 		
 		// retrieve width of the window
-		var width = document.body.getStyle('width').toInt();
+		var width = $(document.body).getStyle('width').toInt();
 		
 		if(width < this.baseWidth)
 			this.width = width; 			// set width

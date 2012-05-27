@@ -17,11 +17,18 @@ var Slider = new Class({
 		 
 		// Container
 		this.container 	= $( 'page' );
+		this.content	= $$( '.content' );
 		
 		// Slider Effect
 		this.slider		= new Fx.Morph(this.container, {
 			transition 	: Fx.Transitions.Circ.easeInOut,
 			duration 	: 800
+		});
+		
+		// set tween effect for when height changes
+		this.container.set('tween', {
+		    duration: '800',
+		    transition: Fx.Transitions.Circ.easeInOut,
 		});
 		
 		// Stop the slider when he is in progress
@@ -68,27 +75,27 @@ var Slider = new Class({
 
 		
 		// Events
-		this.setEvents();
+		this.setSliderEvents();
 		
 		// Set style of the slider
 		this.setSyle();
 		
+		// Set default page
 		this.options.page && this.slide(this.options.page);
+		
+		// Set style of the slider when window resize
+		window.addEvent( 'resize', this.setSyle.bind( this ));
 			
-	
 	},
 	
 	/** Set all events for the slider */
-	setEvents		: function(){
+	setSliderEvents		: function(){
 		
 		// Slider Events 
 		this.slider.addEvents({
 			start 		: this.onStart.bind( this ),
 			complete 	: this.onComplete.bind( this )
 		});
-		
-		// Window Event for responsive slider
-		window.addEvent( 'resize', this.setSyle.bind( this ));
 		
 		return this;
 	},
@@ -115,6 +122,10 @@ var Slider = new Class({
 			this.options.height = this.elem[i].height;
 			
 			this.slideEffect();
+			
+			// Opacity effect
+			this.content.fade('out');
+			this.elem[i].page.fade('in');
 		}
 		
 		return this;
@@ -122,6 +133,7 @@ var Slider = new Class({
 	
 	/** Slide effect */
 	slideEffect		: function(){
+		
 		
 		// Set width of the slider for create animation
 		this.slider.start({
@@ -151,35 +163,36 @@ var Slider = new Class({
 		// retrieve width of the window
 		var width = document.body.getStyle('width').toInt();
 		
-		if(width < this.baseWidth){
-			// set width
-			this.width = width;
-		} 
-		else {
-			// Reuse default values
-			this.width = this.baseWidth;
-		}
-		
-		// set height of pages
-		//Object.each(this.elem, this.setHeightOfPages.bind( this ));
-		//$$('.content').setStyle('height',this.elem[this.options.page].page.getStyle('height'));
-		
-		// set width of containers
-		$$('.content').setStyle('width',this.width-20);
+		if(width < this.baseWidth)
+			this.width = width; 			// set width
+		else
+			this.width = this.baseWidth;	// Reuse default values
 		
 		// Set left position of the container
 		this.container.setStyle('left', "-"+(this.width*this.options.page)+"px" );
 		
+		// set width of containers
+		$$('.content').setStyle('width',this.width-20);
+		
 		// set width for to use the real values for nav events  
 		Object.each(this.elem, this.setNavEvent.bind( this ));
+		
+		this.setHeight.delay(750, this);
+	},
+	
+	setHeight		: function(){
+		
+		// set height of pages
+		Object.each(this.elem, this.setHeightOfPages.bind( this ));
+		
+		this.container.tween('height', this.elem[this.options.page].height);
+		
 	},
 	
 	/** Set height values of all pages */
-	setHeightOfPages	: function(elem){		
+	setHeightOfPages	: function(elem, i){
 		
-		elem.page.setStyle('height', '')
 		elem.height = elem.page.getStyle('height');
-		console.log(elem.height);
 	}
 });
 
@@ -230,7 +243,7 @@ var Stars = new Class({
 	}
 });
 		
-window.addEvent( 'domready' , function(){
+window.addEvent( 'load' , function(){
 	
 	var slider = new Slider();
 

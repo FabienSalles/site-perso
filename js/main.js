@@ -1,11 +1,14 @@
-require(["js/google.js", "order!js/mootools-core.js", "order!js/mootools-more.js"], function () {
+require(["js/google", "order!js/mootools-core", "order!js/mootools-more"], function () {
 			
 	window.addEvent( 'load' , function(){
 		
-		require(["js/slider.js", "js/stars.js"], function (Slider, Stars) {
+		require(["order!js/element", "order!js/slider", "js/stars"], function (element, Slider, Stars) {
 			
 			// slider instanciation
-			var slider = new Slider();
+			var slider = new Slider({
+				elem : element
+			});
+			// Skills
 			var stars = new Stars('.star');
 		});
 	});

@@ -32,8 +32,9 @@
 				a
 					:color $textColor
 					:padding 5px
-					&:hover
-						:cursor pointer
+					&:hover, &.selected
+						@include hover()
+					
 @media screen and (max-width: 800px)
 	#header
 		:height 80px

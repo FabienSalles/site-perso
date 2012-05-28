@@ -34,10 +34,10 @@
 			<hr class="separator"/>
 			<div id="container">
 				<div id="page">
-					<article id="home" class="content">
-						<h1>Développeur Web en Alternance</h1>
+					<article id="home" class="content" itemscope itemtype="http://schema.org/Person">
+						<h1 itemprop="jobTitle">Développeur Web en Alternance</h1>
 						<p>
-							Bienvenue sur mon site! Je m'appelle Fabien SALLES et je suis actuellement en Licence <abbr title="Méthode Informatique Appliqué à la Gestion des Entreprises">MIAGE</abbr> en alternance. Vous trouverez ici mon curriculum vitae détaillé. Bonne visite!<br />
+							Bienvenue sur mon site! Je m'appelle <span itemprop="name">Fabien SALLES</span> et je suis actuellement en Licence <abbr title="Méthode Informatique Appliqué à la Gestion des Entreprises">MIAGE</abbr> en alternance. Vous trouverez ici mon curriculum vitae détaillé. Bonne visite!<br />
 						</p>
 						<ul id="list-social-media" class="box">
 							<li><a href="https://www.facebook.com/sallesfabien" Title="Facebook" target="_blank"><img src="images/facebook_32.png" alt="Facebook" /></a></li>
@@ -120,7 +120,7 @@
 								<hr />
 								<h3>Courtabouef - Île-de-France - avril 2011 à juin 2011</h3>
 								<p>
-									Ce poste m'a était attribué pour un stage de 10 semaines au cours de mon DUT. Il a été ma première expérience dans le monde du web et ma fait découvrir différentes choses tels que Scrum, jQuery et une vision du travail en agence web que je n'avais pas jusqu'à présent.<br />
+									Ce poste m'a était attribué pour un stage de 10 semaines au cours de mon DUT. Il a été ma première expérience dans le monde du web et m'a fait découvrir différentes choses tels que Scrum, jQuery et une vision du travail en agence web que je n'avais pas jusqu'à présent.<br />
 									<strong>Utilisation de :</strong> PHP5 (MVC), SVN, jQuery, HTML, CSS3, Scrum, NetBeans
 								</p>
 							</div>
@@ -152,8 +152,7 @@
 						<section class="skill">
 							<h2>JavaScript</h2>
 							<div class="box">
-								<div>jQuery <span class="star" data-note="4.5"></span></div>
-								<div>jQuery UI <span class="star" data-note="3.5"></span></div>
+								<div>jQuery / jQuery UI <span class="star" data-note="4"></span></div>
 								<div>Mootools<span class="star" data-note="3"></span></div>
 								<div>SDK Facebook<span class="star" data-note="3"></span></div>
 								<div>RequireJS <span class="star" data-note="2.5"></span></div>
@@ -173,7 +172,7 @@
 							<h2>Tests</h2>
 							<div class="box">
 								<div>QUnit<span class="star" data-note="3.5"></span></div>
-								<div>Selenium <span class="star" data-note="3.5"></span></div>
+								<div>Selenium <span class="star" data-note="3"></span></div>
 								<div>PHPUnit <span class="star" data-note="2.5"></span></div>
 							</div>
 						</section>
@@ -262,20 +261,19 @@
 							<h2>Apprentissage</h2>
 							<div class="box">
 								<div>ECMAScript 5</div>
-								<div>Jasmine</div>
 							</div>
 						</section>
 						<p> Les notes attribuées sur les différentes compétences ne sont que des estimations personnelles tenant compte de l'expérience et/ou de l'apprentissage réalisé</p>
 					</section>
-					<article id="contact" class="content">
+					<article id="contact" class="content" itemscope itemtype="http://schema.org/Person">
 						<h1>Contact</h1>
 						<p>
-							<a href="http://fabiensalles.com">Fabien SALLES</a>
+							<a href="http://fabiensalles.com" itemprop="name" >Fabien SALLES</a>
 							<br /><br />
-							<strong>Adresse : </strong>le bech n°8<br /> 19150 St Bonnet Avalouze
+							<strong>Adresse : </strong><span itemprop="streetAddress">le bech n°8</span><br /> <span itemprop="postalCode">19150</span> <span itemprop="addressLocality">St Bonnet Avalouze</span>
 							<br /><br />
-							<strong>Email : </strong> <a href="mailto:contact[at]fabiensalles.com">contact[at]fabiensalles.com</a><br />
-							<strong>Téléphone : </strong> 06 76 31 40 91 
+							<strong>Email : </strong> <a href="mailto:contact@fabiensalles.com" itemprop="email">contact@fabiensalles.com</a><br />
+							<strong>Téléphone : </strong> <span itemprop="telephone">0676314091</span> 
 						</p>
 					</article>
 				</div>

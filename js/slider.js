@@ -1,4 +1,4 @@
-define(["js/mootools-core.js"], function(){	
+define(["js/mootools-core"], function(){	
 	/**
 	 * Slider class
 	 */
@@ -39,40 +39,11 @@ define(["js/mootools-core.js"], function(){
 			this.baseWidth = 840;
 			this.width = 840;
 			
-			//Elements
-			this.elem = [
-				{
-					title	: 'Accueil',
-					link	: $( 'link-home' ),
-					page	: $( 'home' )
-				},
-				{
-					title 	: 'Formation',
-					link	: $( 'link-formation' ),
-					page	: $( 'formation' )
-				},
-				{
-					title 	: 'Expériences',
-					link	: $( 'link-experience' ),
-					page	: $( 'experience' )
-				},
-				{
-					title 	: 'Compétences',
-					link	: $( 'link-skill' ),
-					page	: $( 'skills' )
-				},
-				{
-					title 	: 'Contact',
-					link	: $( 'link-contact' ),
-					page	: $( 'contact' )
-				}
-			];
-			
 			// Merge defaults and instanciations options
 			this.setOptions(options);
 			
 			// set value of the height of the page
-			this.height = this.elem[this.options.page].page.getStyle('height');
+			this.height = this.options.elem[this.options.page].page.getStyle('height');
 	
 			
 			// Events
@@ -120,13 +91,17 @@ define(["js/mootools-core.js"], function(){
 				this.options.page = i;
 				
 				this.options.left = -this.width*i;
-				this.height = this.elem[i].height;
+				this.height = this.options.elem[i].height;
 				
 				this.slideEffect();
 				
 				// Opacity effect
 				this.content.fade('out');
-				this.elem[i].page.fade('in');
+				this.options.elem[i].page.fade('in');
+				
+				// Set selected element
+				$$('.selected').set( 'class', '' );
+				this.options.elem[i].link.set( 'class', 'selected');
 			}
 			
 			return this;
@@ -176,7 +151,7 @@ define(["js/mootools-core.js"], function(){
 			$$('.content').setStyle('width',this.width-20);
 			
 			// set width for to use the real values for nav events  
-			Object.each(this.elem, this.setNavEvent.bind( this ));
+			Object.each(this.options.elem, this.setNavEvent.bind( this ));
 			
 			this.setHeight.delay(750, this);
 		},
@@ -184,9 +159,9 @@ define(["js/mootools-core.js"], function(){
 		setHeight		: function(){
 			
 			// set height of pages
-			Object.each(this.elem, this.setHeightOfPages.bind( this ));
+			Object.each(this.options.elem, this.setHeightOfPages.bind( this ));
 			
-			this.container.tween('height', this.elem[this.options.page].height);
+			this.container.tween('height', this.options.elem[this.options.page].height);
 			
 		},
 		

@@ -8,7 +8,7 @@ require(["js/google", "order!js/mootools-core", "order!js/mootools-more"], funct
 			var slider = new Slider({
 				elem : element
 			});
-			// Skills
+			// Skills notation
 			var stars = new Stars('.star');
 		});
 	});

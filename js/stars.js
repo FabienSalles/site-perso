@@ -1,4 +1,4 @@
-define(["js/mootools-core"], function(){
+define(["mootools-core"], function(){
 	/**
 	 * Class Stars
 	 */

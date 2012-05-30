@@ -1,4 +1,4 @@
-require(["google", "order!mootools-core", "order!mootools-more"], function () {
+require(["google", "mootools-core"], function () {
 			
 	window.addEvent( 'load' , function(){
 		

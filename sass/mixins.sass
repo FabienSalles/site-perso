@@ -44,3 +44,31 @@
 	:color $white
 	@include text-shadow($white 0px 0px 20px)
 	:pointer cursor
+	
+@mixin animation-name($name : none)
+	:-webkit-animation-name $name
+	:-moz-animation-name $name
+	:-ms-animation-name $name
+	:-o-animation-name $name
+	:animation-name $name
+
+@mixin animation-duration($duration : 1s)
+	:-webkit-animation-duration 1s
+	:-moz-animation-duration 1s
+	:-ms-animation-duration 1s
+	:-o-animation-duration 1s
+	:animation-duration 1s
+
+@mixin animation-fill-mode($mode : both)
+	:-webkit-animation-fill-mode $mode
+	:-moz-animation-fill-mode $mode
+	:-ms-animation-fill-mode $mode
+	:-o-animation-fill-mode $mode
+	:animation-fill-mode $mode
+	
+@mixin animation($animate : none)
+	:-webkit-animation $animate
+	:-moz-animation $animate
+	:-ms-animation $animate
+	:-o-animation $animate
+	:animation $animate

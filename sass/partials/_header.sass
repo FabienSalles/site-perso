@@ -16,11 +16,12 @@
 				@include text-shadow(none)
 				&:hover
 					@include text-shadow($white 0px 0px 10px)
-	#nav 
+	#nav
 		:position absolute
 		:right 0
 		:top 0
 		:font-size $baseFontSize*1.6
+		:font-family 'PlaytimeWithHotToddiesRegular'
 		ul
 			margin: 0
 			padding-top: 35px
@@ -29,6 +30,8 @@
 				:padding 0
 				:list-style none
 				@include inline-block()
+				&:hover
+					@include animation(pulse 0.25s)
 				a
 					:color $textColor
 					:padding 5px

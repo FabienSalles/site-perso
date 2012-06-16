@@ -44,7 +44,7 @@ define(["mootools-core"], function(){
 			
 			// set value of the height of the page
 			this.height = this.options.elem[this.options.page].page.getStyle('height');
-	
+			this.options.elem[this.options.page].link.set( 'class', 'selected');
 			
 			// Events
 			this.setSliderEvents();
@@ -71,7 +71,7 @@ define(["mootools-core"], function(){
 			
 			return this;
 		},
-		
+
 		/** Set click events in navbar */
 		setNavEvent	: function( elem, i ){
 			
@@ -80,12 +80,12 @@ define(["mootools-core"], function(){
 			elem.link.removeEvents( 'click' );
 			
 			// Create Event slide
-			elem.link.addEvent( 'click', this.slide.bind( this, i ));
+			elem.link.addEvent('click', this.slide.bind( this, i ));
 		},
 		
 		/** Slide width val of the left position */
 		slide 			: function( i ){
-	
+			
 			if(!this.inProgress && this.options.page !=i){
 				
 				this.options.page = i;

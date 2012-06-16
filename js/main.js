@@ -1,15 +1,20 @@
-require(["google", "mootools-core"], function () {
+require([
+"google",
+"order!mootools-core",
+"order!element",
+"order!page",
+"order!slider", 
+"stars"],
+function (google, Mootools, element, page, Slider, Stars) {
 			
 	window.addEvent( 'load' , function(){
-		
-		require(["order!element", "order!slider", "stars"], function (element, Slider, Stars) {
 			
-			// slider instanciation
-			var slider = new Slider({
-				elem : element
-			});
-			// Skills notation
-			var stars = new Stars('.star');
+		// slider instanciation
+		var slider = new Slider({
+			elem : element,
+			page : page
 		});
+		// Skills notation
+		var stars = new Stars('.star');
 	});
 });

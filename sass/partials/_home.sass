@@ -3,20 +3,20 @@
 	p
 		:margin 50px 0
 		:font-size $baseFontSize*1.7
-	#list-social-media
-		:margin 40px auto 0
-		:max-width 245px
-		:text-align center
-		:padding 0 !important
-		li
-			@include inline-block()
-			:list-style-type none
-			:padding 10px 5px
-			:margin 0
-			:width 32px
-			:height 32px
-			img:hover
-				@include animation(wiggle 1s)
+#list-social-media
+	:margin 40px auto 0
+	:max-width 245px
+	:text-align center
+	:padding 0 !important
+	li
+		@include inline-block()
+		:list-style-type none
+		:padding 10px 5px
+		:margin 0
+		:width 32px
+		:height 32px
+		img:hover
+			@include animation(wiggle 1s)
 			
 @media screen and (max-width: 480px)
 	#home
